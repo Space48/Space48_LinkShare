@@ -1,0 +1,94 @@
+<?xml version="1.0" ?>
+<config>
+    <sections>
+        <Space48_Linkshare translate="label">
+            <label>Space48 Linkshare</label>
+            <tab>general</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>1000</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <linkshare translate="label">
+                    <label>LinkShare Configuration</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>100</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <mid translate="label comment">
+                            <label>MID</label>
+                            <comment>
+                                <![CDATA[Enter your unique Merchant ID from link share]]>
+                            </comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </mid>
+                        <ftphost>
+                            <label>FTP Host</label>
+                            <comment>
+                                <![CDATA[Enter the Linkshare FTP host]]>
+                            </comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>15</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </ftphost>
+                        <ftpuser>
+                            <label>FTP User</label>
+                            <comment>
+                                <![CDATA[Enter the Linkshare FTP Username]]>
+                            </comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </ftpuser>
+                        <ftppassword>
+                            <label>FTP Password</label>
+                            <comment>
+                                <![CDATA[Enter the Linkshare FTP password]]>
+                            </comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>25</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </ftppassword>
+                        <ftpupload>
+                            <label>FTP Upload path</label>
+                            <comment>
+                                <![CDATA[Enter the upload path on the Linkshare FTP server]]>
+                            </comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </ftpupload>
+
+                        <protocol>
+                            <label>Pixel HTTP/S protocol</label>
+                            <comment>
+                                <![CDATA[Enter the correct protocol to use ( HTTP / HTTPS )]]>
+                            </comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>35</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </protocol>
+
+                    </fields>
+                </linkshare>
+            </groups>
+        </Space48_Linkshare>
+    </sections>
+</config>

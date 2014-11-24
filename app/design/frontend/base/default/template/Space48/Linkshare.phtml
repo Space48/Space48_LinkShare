@@ -1,0 +1,19 @@
+<?php
+$httpProtocol = 'http';
+$mid          = $this->getMerchantId();
+$lastOrderId  = $this->getLastOrderId();
+$currencyCode = $this->getCurrencyCode();
+$productData  = $this->getSkus();
+
+if ('linkshare' == Mage::getModel('core/cookie')->get('affiliatenetwork')) {
+        echo '<img src="' . $httpProtocol .
+            '://track.linksynergy.com/ep?mid=' . $mid .
+            '&ord=' . $lastOrderId .
+            '&cur=' . $productData['currency'] .
+            '&skulist=' . $productData['sku'] .
+            '&qlist=' .$productData['quantity'] .
+            '&amtlist=' . $productData['amount'] .
+            '&namelist=' . $productData['product'] .'" width="1" height="1">';
+}
+
+?>

@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Space48_Linkshare>
+            <version>1.0.0</version>
+        </Space48_Linkshare>
+    </modules>
+    <global>
+        <blocks>
+            <Space48_Linkshare>
+                <class>Space48_Linkshare_Block</class>
+            </Space48_Linkshare>
+        </blocks>
+        <helpers>
+            <space48_linkshare>
+                <class>Space48_Linkshare_Helper</class>
+            </space48_linkshare>
+        </helpers>
+        <models>
+            <space48_linkshare>
+                <class>Space48_Linkshare_Model</class>
+            </space48_linkshare>
+        </models>
+        <resources>
+            <space48linkshare_setup>
+                <setup>
+                    <module>Space48_Linkshare</module>
+                    <class>Mage_Eav_Model_Entity_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </space48linkshare_setup>
+            <space48linkshare_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </space48linkshare_write>
+            <space48linkshare_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </space48linkshare_read>
+        </resources>
+
+        <events>
+            <controller_front_init_routers>
+                <observers>
+                    <Space48_linkshare>
+                        <type>singleton</type>
+                        <class>Space48_Linkshare_Model_Observer</class>
+                        <method>linkshareAffiliateTracking</method>
+                    </Space48_linkshare>
+                </observers>
+            </controller_front_init_routers>
+        </events>
+    </global>
+
+    <crontab>
+        <jobs>
+            <space48_linkshare_feed>
+                <schedule>
+                    <cron_expr>0 3 * * *</cron_expr>
+                </schedule>
+                <run>
+                    <model>space48_linkshare/cron_crontab::createExport</model>
+                </run>
+            </space48_linkshare_feed>
+        </jobs>
+    </crontab>
+
+    <frontend>
+        <routers>
+            <space48linkshare>
+                <use>standard</use>
+                <args>
+                    <module>Space48_Linkshare</module>
+                    <frontName>linkshare</frontName>
+                </args>
+            </space48linkshare>
+        </routers>
+
+        <layout>
+            <updates>
+                <space48_linkshare>
+                    <file>Space48_Linkshare.xml</file>
+                </space48_linkshare>
+            </updates>
+        </layout>
+    </frontend>
+
+    <adminhtml>
+        <acl>
+            <resources>
+                <all>
+                    <title>Allow Everything</title>
+                </all>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <Space48_Linkshare translate="title">
+                                            <title>Space48 Linkshare</title>
+                                            <sort_order>101</sort_order>
+                                        </Space48_Linkshare>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+</config>
